@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Арфиссимо | Концерт арфового дуэта</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+.next-concert{
+
+background:#f7f4ef;
+
+text-align:center;
+
+}
+
+.next-wrapper{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:70px;
+
+flex-wrap:wrap;
+
+margin-top:60px;
+
+}
+
+.next-text{
+
+max-width:450px;
+
+text-align:left;
+
+}
+
+.next-text h3{
+
+font-size:46px;
+
+margin-bottom:25px;
+
+}
+
+.next-text p{
+
+font-size:20px;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+}
+
+.qr{
+
+width:260px;
+
+border-radius:18px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.calendar{
+
+background:white;
+
+text-align:center;
+
+}
+
+.calendar-card{
+
+max-width:420px;
+
+margin:auto;
+
+background:#faf6ef;
+
+padding:45px;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.calendar-month{
+
+font-size:18px;
+
+letter-spacing:5px;
+
+color:#b79d63;
+
+margin-bottom:20px;
+
+}
+
+.calendar-day{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:100px;
+
+line-height:1;
+
+margin-bottom:20px;
+
+}
+
+.calendar-info{
+
+font-size:19px;
+
+line-height:2;
+
+margin-bottom:35px;
+
+}
+
+.hero-logo{
+
+width:120px;
+
+margin:0 auto 25px;
+
+display:block;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:Montserrat,sans-serif;
+background:#faf8f5;
+color:#222;
+overflow-x:hidden;
+
+}
+
+section{
+
+padding:90px 8%;
+
+}
+
+h1,h2,h3{
+
+font-family:"Cormorant Garamond",serif;
+font-weight:400;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+img{
+
+max-width:100%;
+display:block;
+
+}
+
+.hero{
+
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.65)),
+url("images/main.jpg") center/cover no-repeat;
+position:relative;
+text-align:center;
+
+}
+
+.hero-content{
+
+background:rgba(255,255,255,.78);
+padding:60px;
+border-radius:25px;
+backdrop-filter:blur(15px);
+box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+.hero h1{
+
+font-size:78px;
+letter-spacing:2px;
+margin-bottom:20px;
+
+}
+
+.subtitle{
+
+font-size:24px;
+font-family:"Cormorant Garamond",serif;
+margin-bottom:35px;
+
+}
+
+.date{
+
+font-size:34px;
+letter-spacing:3px;
+margin-bottom:35px;
+font-family:"Cormorant Garamond",serif;
+
+}
+
+.button{
+
+display:inline-block;
+padding:16px 38px;
+border-radius:50px;
+background:#b79d63;
+color:white;
+transition:.3s;
+margin:10px;
+font-weight:500;
+
+}
+
+.button:hover{
+
+background:#9c824d;
+transform:translateY(-3px);
+
+}
+
+.outline{
+
+background:white;
+color:#b79d63;
+border:2px solid #b79d63;
+
+}
+
+.outline:hover{
+
+background:#b79d63;
+color:white;
+
+}
+
+.invite{
+
+max-width:900px;
+margin:auto;
+text-align:center;
+
+}
+
+.invite h2{
+
+font-size:58px;
+margin-bottom:35px;
+
+}
+
+.invite p{
+
+font-size:22px;
+line-height:1.9;
+
+}
+
+.divider{
+
+width:140px;
+height:2px;
+background:#b79d63;
+margin:50px auto;
+
+}
+
+.artists{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:60px;
+
+}
+
+.artist{
+
+text-align:center;
+
+}
+
+.artist img{
+
+height:470px;
+width:100%;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+.artist h3{
+
+font-size:42px;
+margin-top:30px;
+
+}
+
+.artist p{
+
+margin-top:18px;
+line-height:1.8;
+font-size:17px;
+
+}
+
+.countdown{
+
+background:white;
+text-align:center;
+
+}
+
+.countdown h2{
+
+font-size:58px;
+margin-bottom:60px;
+
+}
+
+.timer{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:35px;
+
+}
+
+.time-box{
+
+background:#faf6ef;
+padding:35px;
+border-radius:20px;
+min-width:160px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.time-box span{
+
+display:block;
+font-size:64px;
+font-family:"Cormorant Garamond",serif;
+color:#b79d63;
+
+}
+
+.time-box small{
+
+font-size:18px;
+letter-spacing:2px;
+
+}
+
+.location{
+
+text-align:center;
+
+}
+
+.location h2{
+
+font-size:58px;
+margin-bottom:35px;
+
+}
+
+iframe{
+
+width:100%;
+height:500px;
+border:none;
+border-radius:25px;
+margin-top:40px;
+
+}
+
+.donate{
+
+background:#b79d63;
+color:white;
+text-align:center;
+
+}
+
+.donate h2{
+
+font-size:60px;
+margin-bottom:20px;
+
+}
+
+.donate p{
+
+max-width:750px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+margin-bottom:40px;
+
+}
+
+.footer{
+
+padding:60px;
+background:#111;
+color:white;
+text-align:center;
+
+}
+
+.footer a{
+
+color:#d9c38f;
+
+}
+
+.fade{
+
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+
+}
+
+.fade.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+max-width:768px{
+
+.hero h1{
+
+font-size:54px;
+
+}
+
+.hero-content{
+
+padding:35px;
+
+}
+
+.invite h2,
+.program h2,
+.location h2,
+.donate h2,
+.countdown h2{
+
+font-size:42px;
+
+}
+.artist img{
+
+height:auto;
+
+}
+
+.timer{
+
+gap:15px;
+
+}
+
+.time-box{
+
+min-width:120px;
+padding:25px;
+
+}
+
+.time-box span{
+
+font-size:42px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content fade">
+
+<header class="header">
+
+<img src="images/logo.png"
+class="hero-logo">
+<h1>Арфиссимо</h1>
+
+<div class="subtitle">
+Концерт арфового дуэта
+</div>
+
+<div class="date">
+21 августа 2026 • 19:00
+</div>
+
+<div class="hero-buttons">
+
+    <a class="button"
+       href="https://qtickets.ru/event/249892"
+       target="_blank">
+
+        🍷 Забронировать столик
+
+    </a>
+
+    <a class="button outline"
+       href="https://pay.cloudtips.ru/p/9c262941"
+       target="_blank">
+
+        ❤ Поддержать проект
+
+    </a>
+
+</div>
+
+</section>
+
+<section class="invite fade">
+
+<h2>Приглашение</h2>
+
+<div class="divider"></div>
+
+<p>
+
+Мы рады пригласить Вас на концерт
+<strong>«Арфиссимо»</strong>.
+
+Две арфы.
+Один вечер.
+Музыка, способная вдохновлять.
+
+Будем счастливы разделить
+это событие вместе с Вами.
+
+Концерт пройдет в кафетерии дворца Кваренги. 
+Вход свободный, по брони столиков (обратите внимание, что один билет рассчитан на столик, то есть на 1-4 человек) 
+
+</p>
+
+</section>
+
+<section class="artists fade">
+
+<div class="artist">
+
+<img src="images/IMG_0107.png">
+
+<h3>Есения Евдокимова</h3>
+
+<p>
+
+Лауреат международных конкурсов,
+солистка и артистка оркестра.
+Исполнительница классической
+и современной музыки для арфы.
+
+</p>
+
+</div>
+
+<div class="artist">
+
+<img src="images/IMG_0109.png">
+
+<h3>Ева Клец</h3>
+
+<p>
+
+Исполнительница камерной музыки,
+лауреат международных конкурсов,
+участница фестивалей
+и автор многочисленных
+концертных программ.
+
+</p>
+
+</div>
+
+</section>
+</section>
+
+<section class="countdown fade">
+
+    <h2>До концерта осталось</h2>
+
+    <div class="divider"></div>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <span id="weeks">00</span>
+            <small>недель</small>
+        </div>
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>дней</small>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>часов</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>минут</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>секунд</small>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="calendar fade">
+
+<h2>Сохраните дату</h2>
+
+<div class="divider"></div>
+
+<div class="calendar-card">
+
+<div class="calendar-month">
+
+АВГУСТ
+
+</div>
+
+<div class="calendar-day">
+
+21
+
+</div>
+
+<div class="calendar-info">
+
+<p>Пятница</p>
+
+<p>19:00</p>
+
+<p>Концерт дуэта «Арфиссимо»</p>
+
+</div>
+
+<a class="button"
+id="calendarBtn">
+
+📅 Добавить в календарь
+
+</a>
+
+</div>
+
+</section>
+
+<section class="next-concert fade">
+
+<h2>
+
+Следующий концерт
+
+</h2>
+
+<div class="divider"></div>
+
+<div class="next-wrapper">
+
+<div class="next-text">
+
+<h3>
+
+21 сентября 2026
+
+</h3>
+
+<p>
+
+Будем рады видеть Вас
+на следующем выступлении
+дуэта «Арфиссимо».
+
+</p>
+
+<a class="button"
+
+href="https://ВАША_ССЫЛКА_НА_БИЛЕТ"
+
+target="_blank">
+
+🎟 Купить билет
+
+</a>
+
+</div>
+
+<div>
+
+<img
+
+src="images/qr.png"
+
+class="qr">
+
+<p>
+
+Отсканируйте QR-код
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="location fade">
+
+    <h2>Место проведения</h2>
+
+    <div class="divider"></div>
+
+    <p style="font-size:20px;line-height:1.8;max-width:700px;margin:auto;">
+        Санкт-Петербург,
+
+        Дворец Кваренги, Казанская улица, 7
+
+        Начало в 19:00
+    </p>
+
+   <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Af98e6a39695f336775c9420429d7ccb03c621d3d35370726113261f7cef29e14&amp;source=constructor"
+        loading="lazy">
+    </iframe>
+    
+
+    <a class="button"
+       target="_blank"
+       href="https://yandex.ru/maps/org/dvorets_kvarengi/56093286728">
+        Открыть в Яндекс Картах
+    </a>
+
+</section>
+
+<section class="donate fade">
+
+    <h2>Поддержать артистов</h2>
+
+    <p>
+
+        Если концерт подарил Вам вдохновение,
+        Вы можете поддержать развитие
+        проекта «Арфиссимо».
+
+        
+
+        Любая сумма помогает создавать
+        новые концертные программы.
+
+    </p>
+
+    <a class="button outline"
+       style="background:white;color:#b79d63;"
+       target="_blank"
+       href="https://pay.cloudtips.ru/p/9c262941">
+        ❤️ Сделать донат
+    </a>
+
+</section>
+
+<footer class="footer">
+
+    <h2 style="font-size:46px;margin-bottom:20px;">
+        Арфиссимо
+    </h2>
+
+    <p>
+
+        Телефон:
+        <a href="tel:+79818880058">
+            +7 (981) 888-00-58
+        </a>
+
+        
+
+        Email:
+        <a href="mailto:harpistkaa@inbox.ru">
+            harpistkaa@inbox.ru
+        </a>
+
+        
+
+        Telegram • VK • YouTube
+
+    </p>
+
+</footer>
+
+<script>
+
+const concertDate =
+new Date("2026-08-21T19:00:00");
+
+function updateTimer(){
+
+const now=new Date();
+
+const diff=concertDate-now;
+
+if(diff<=0){
+
+document.querySelector(".timer").innerHTML="<h2>Концерт уже начался!</h2>";
+
+return;
+
+}
+
+const totalSeconds=Math.floor(diff/1000);
+
+const weeks=Math.floor(totalSeconds/(60*60*24*7));
+
+const days=Math.floor(
+(totalSeconds%(60*60*24*7))/(60*60*24)
+);
+
+const hours=Math.floor(
+(totalSeconds%(60*60*24))/3600
+);
+
+const minutes=Math.floor(
+(totalSeconds%3600)/60
+);
+
+const seconds=Math.floor(
+totalSeconds%60
+);
+
+document.getElementById("weeks").innerHTML=weeks;
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+}
+
+updateTimer();
+
+setInterval(updateTimer,1000);
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+
+observer.observe(el);
+
+});
+
+document
+.getElementById("calendarBtn")
+.addEventListener("click",function(){
+
+const ics=`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Концерт Арфиссимо
+DTSTART:20260821T160000Z
+DTEND:20260821T180000Z
+LOCATION:Санкт-Петербург
+DESCRIPTION:Концерт арфового дуэта Арфиссимо
+END:VEVENT
+END:VCALENDAR`;
+
+const blob=new Blob([ics],{type:"text/calendar"});
+
+const link=document.createElement("a");
+
+link.href=URL.createObjectURL(blob);
+
+link.download="Arfissimo.ics";
+
+link.click();
+
+});
+
+</script>
+
+</body>
+
+</html>
