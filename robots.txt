@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://evlamiv-art.github.io/Arfissimo/sitemap.xml
