@@ -490,18 +490,41 @@ transform:translateY(0);
 
 }
 
-max-width:768px{
-
-.hero h1{
-
-font-size:54px;
-
-}
+@media (max-width:768px){
 
 .hero-content{
+    padding:30px 20px;
+}
 
-padding:35px;
+.hero h1{
+    font-size:58px;
+    line-height:0.95;
+    letter-spacing:1px;
+}
 
+.subtitle{
+    font-size:18px;
+}
+
+.date{
+    font-size:22px;
+    letter-spacing:1px;
+}
+
+.hero-content::before{
+    background-position:center 70px;
+    background-size:320px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.button{
+    width:100%;
+    max-width:320px;
 }
 
 .invite h2,
@@ -509,37 +532,27 @@ padding:35px;
 .location h2,
 .donate h2,
 .countdown h2{
-
-font-size:42px;
-
+    font-size:42px;
 }
+
 .artist img{
-
-height:auto;
-
+    height:auto;
 }
 
 .timer{
-
-gap:15px;
-
+    gap:15px;
 }
 
 .time-box{
-
-min-width:120px;
-padding:25px;
-
+    min-width:120px;
+    padding:25px;
 }
 
 .time-box span{
-
-font-size:42px;
-
+    font-size:42px;
 }
 
 }
-
 </style>
 
 </head>
